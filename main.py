@@ -1,3 +1,4 @@
+import time
 
 def a():
     myString = "helLo woRld"
@@ -72,5 +73,29 @@ def j():
     print(myList)
 
 
+# Write a function that accepts a string containing a sentence 
+# and prints on a single line that sentence with only the first 
+# letter of each word capitalized.  
+# Print a helpful error message if the input is not a string. 
+def three():
+    string = input("\nWrite a sentence: ")
+    
+    if all(x.isalpha() or x.isspace() or x == "." or x == "," or x == "!" for x in string):
+        string = string.split(" ")
+        print(string)
+        for i in range (0, len(string)):
+            string[i] = string[i].capitalize()
+        print(string)
+        string = " ".join(string)
+        print(string)
+    else:
+        print("\nIncorrect Input.")
+        print("Please write a sentence only containing alphabetic characters.")
+        time.sleep(2)
+        three()
 
-j()
+
+
+
+
+three()
